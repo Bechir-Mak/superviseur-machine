@@ -16,7 +16,7 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 <!-- Stylesheet -->
 <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
 
@@ -32,7 +32,7 @@
 
             <!-- Sidebar - Brand -->
             <div class="sidebar-brand d-flex align-items-center justify-content-center">
-             
+
                 <div class="sidebar-brand-text mx-3">Admin</div>
             </div>
 
@@ -56,7 +56,7 @@
                     <i class="fas fa-fw fa-users"></i> <!-- Icône d'utilisateur -->
                     <span>Utilisateurs</span>
                 </a>
-             
+
             </li>
 
            <!-- Nav Item - Utilities Collapse Menu -->
@@ -76,7 +76,7 @@
            @foreach($employees as $employee)
            <a class="collapse-item" href="{{ route('admin.employee.machines', ['employee' => $employee->id]) }}">{{ $employee->name }}</a>
        @endforeach
-       
+
         </div>
     </div>
 </li>
@@ -97,8 +97,8 @@
                     <span>All Machines</span>
                 </a>
             </li>
-            
-          
+
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -108,7 +108,7 @@
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
-       
+
 
         </ul>
         <!-- End of Sidebar -->
@@ -138,7 +138,7 @@
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
-                              
+
                                 <div class="dropdown-divider"></div>
                                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -166,7 +166,7 @@
 </div>@endif
                     @yield('content')
 
-                  
+
                 </div>
                 <!-- /.container-fluid -->
 
@@ -234,6 +234,7 @@
 <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <!-- Core plugin JavaScript-->
 <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 

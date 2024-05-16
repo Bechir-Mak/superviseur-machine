@@ -37,16 +37,18 @@
                         <div class="card-header">
                             <h5 class="card-title">Employee: {{ $machine->user->name }}</h5>
                             <h5 class="card-title">Id: {{ $machine->id }}</h5>
-                            <!-- Affichage de la phrase en fonction du statut de la machine -->
-                            @if($machine->statut == 0)
-                                <p id="statut_{{ $machine->id }}">Status: Machine en repos</p>
-                            @elseif($machine->statut == 1)
-                                <p id="statut_{{ $machine->id }}">Status: Machine en production</p>
-                            @elseif($machine->statut == 2)
-                                <p id="statut_{{ $machine->id }}">Status: Machine en état d'intervention</p>
-                            @elseif($machine->statut == 3)
-                                <p id="statut_{{ $machine->id }}">Status: Machine occupée</p>
-                            @endif
+                            <p id="statut_{{ $machine->id }}">
+                                Status:
+                                @if($machine->statut == 0)
+                                    Machine en repos
+                                @elseif($machine->statut == 1)
+                                    Machine en production
+                                @elseif($machine->statut == 2)
+                                    Machine en état d'intervention
+                                @elseif($machine->statut == 3)
+                                    Machine occupée
+                                @endif
+                            </p>
                         </div>
                         <div class="card-body">
                             <!-- Graphique Highcharts -->
@@ -169,8 +171,9 @@
             var statusMessage = getStatusMessage(status);
             Toastify({
                 text: 'Le statut de la machine ' + machineId + ' est maintenant ' + statusMessage,
-                duration: 5000,
-                gravity: "bottom",
+                duration: 6000,
+                gravity: "top",
+                position: 'right',
                 backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
 
             }).showToast();

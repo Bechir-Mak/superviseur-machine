@@ -117,8 +117,9 @@
             var statusMessage = getStatusMessage(status);
             Toastify({
                 text: 'Le statut de la machine ' + machineId + ' est maintenant ' + statusMessage,
-                duration: 3000,
-                gravity: "bottom",
+                duration: 6000,
+                gravity: "top",
+                position: 'right',
                 backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
 
             }).showToast();

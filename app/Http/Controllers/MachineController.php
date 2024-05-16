@@ -17,6 +17,7 @@ class MachineController extends Controller
         }else{
             $machines = Auth::user()->machines()->get();
         }
+
         return response()->json($machines);
     }
 
